@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+  </head>
+
+  <body>
+  <h2>Let's become Bootstrap Expert. Let's GO YEAH...</h2>
+    <h1 onmouseover= "style.color='red';" onmouseout="style.color = 'black'" onclick="this.innerHTML ='Ooops!'">Hello Plunker!</h1>
+    <button onclick="document.getElementById('IdDate').innerHTML = Date();">GetDate</button>
+    <h2 id="IdDate">Date</h2>
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)" class="divColor">
+Mouse Over Me</div>
+
+</br/>
+
+<div onmouseover="alert('black')" style="width:200px; height:200px; color:white; background:black">
+  <div style="width:100px; height:100px; background:yellow; margin:0 auto; float:none;" onmouseenter="alert('yellow')">hello</div>
+</div>
+<br />
+<div onmouseup="mUp(this)" onmousedown="mDown(this)" class="divColor">
+  MouseUpDown
+</div>
+<br />
+Enter your name: <input type="text" id="fname" maxlength="30" 
+onchange="myOnChangeFunction()"onFocus="myOnFocusFunction(this)">
+<p>When you leave te input field, a function is triggered which 
+transforms the input text to upper case.</p>
+<span id="fSpan"></span>
+
+
+<br />
+On Key Up: <input type="text" id="keyUp" onkeyup = "OnKeyUpFunction();" maxlength="30">
+<span id="spanKeyUp"></span>
+
+<br />
+<br />
+On Key Down: <input type="text" id="keyDown" onkeydown = "OnKeyDownFunction();">
+<span id="spanKeyDown"></span>
+<br /><br />
+On Key Up and Down: 
+<input type="text" id="keyUpDown" onkeydown = "OnKDownFunction();" 
+onkeyup="onKUpFunction();" onkeypress="OnKeyPressFunction();" maxLength="30">
+<span id="spanKeyUpDown"></span>
+<br />
+<p onclick="ChangeColor(this,'yellow');">Click to change text color to yellow</p>
+<p onmouseover="ChangeColor(this,'grey');" onmouseout="ChangeColor(this,'black');">Mouse over to see text color as grey.</p>
+<h2>Clickable Dropdown</h2>
+<div id="dropdown">
+  <button id="myBtn" class="dropbtn" onclick="ClickableDropdown();">Dropdown</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="#Home">Home</a>
+    <a href="#About">About</a>
+    <a href="#Contact">Contact</a>
+  </div>
+</div>
+<br />
+<br />
+</body>
+
+</html>
