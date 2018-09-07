@@ -1,72 +1,143 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
-    <link rel="stylesheet" href="style.css">
-    <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<head>
+  <link rel="stylesheet" href="style.css">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
-  </head>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
 
-  <body>
-    <h1>test</h1>
-  <h2>Let's become Bootstrap Expert. Let's GO YEAH...</h2>
-    <h1 onmouseover= "style.color='red';" onmouseout="style.color = 'black'" onclick="this.innerHTML ='Ooops!'">Hello Plunker!</h1>
-    <button onclick="document.getElementById('IdDate').innerHTML = Date();">GetDate</button>
-    <h2 id="IdDate">Date</h2>
-    <div onmouseover="mOver(this)" onmouseout="mOut(this)" class="divColor">
-Mouse Over Me</div>
-
-</br/>
-
-<div onmouseover="alert('black')" style="width:200px; height:200px; color:white; background:black">
-  <div style="width:100px; height:100px; background:yellow; margin:0 auto; float:none;" onmouseenter="alert('yellow')">hello</div>
-</div>
-<br />
-<div onmouseup="mUp(this)" onmousedown="mDown(this)" class="divColor">
-  MouseUpDown
-</div>
-<br />
-Enter your name: <input type="text" id="fname" maxlength="30" 
-onchange="myOnChangeFunction()"onFocus="myOnFocusFunction(this)">
-<p>When you leave te input field, a function is triggered which 
-transforms the input text to upper case.</p>
-<span id="fSpan"></span>
-
-
-<br />
-On Key Up: <input type="text" id="keyUp" onkeyup = "OnKeyUpFunction();" maxlength="30">
-<span id="spanKeyUp"></span>
-
-<br />
-<br />
-On Key Down: <input type="text" id="keyDown" onkeydown = "OnKeyDownFunction();">
-<span id="spanKeyDown"></span>
-<br /><br />
-On Key Up and Down: 
-<input type="text" id="keyUpDown" onkeydown = "OnKDownFunction();" 
-onkeyup="onKUpFunction();" onkeypress="OnKeyPressFunction();" maxLength="30">
-<span id="spanKeyUpDown"></span>
-<br />
-<p onclick="ChangeColor(this,'yellow');">Click to change text color to yellow</p>
-<p onmouseover="ChangeColor(this,'grey');" onmouseout="ChangeColor(this,'black');">Mouse over to see text color as grey.</p>
-<h2>Clickable Dropdown</h2>
-<div id="dropdown">
-  <button id="myBtn" class="dropbtn" onclick="ClickableDropdown();">Dropdown</button>
-  <div id="myDropdown" class="dropdown-content">
-    <a href="#Home">Home</a>
-    <a href="#About">About</a>
-    <a href="#Contact">Contact</a>
-  </div>
-</div>
-<br />
-<br />
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <h1 align="center">
+        <mark>JS Events</mark>
+      </h1>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        /
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <h1 onmouseover="style.color='red';" onmouseout="style.color = 'black'" onclick="this.innerHTML ='Ooops!'">Hello Plunker!</h1>
+      </div>
+      <div class="col-sm-3">
+        <div class="btn-group btn-group-sm">
+          <button type="button" onclick="document.getElementById('IdDate').innerHTML = Date();" class="btn btn-info btn-lg">Date</button>
+          <button type="button" onclick="GetDay();" class="btn btn-info btn-lg">Day</button>
+          <button type="button" onclick="GetYear();" class="btn btn-info btn-lg">Year
+            <span class="badge">1</span>
+          </button>
+        </div>
+        <h4 id="IdDate">Click above button</h4>
+      </div>
+      <div class="col-sm-3">
+        <div onmouseover="mOver(this)" onmouseout="mOut(this)" class="divColor">
+          Mouse Over Me</div>
+      </div>
+      <div class="col-sm-3">
+        <div onmouseover="alert('black')" style="width:200px; height:200px; color:white; background:black">
+          <div style="width:100px; height:100px; background:yellow; margin:0 auto; float:none;" onmouseenter="alert('yellow')">hello</div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <div onmouseup="mUp(this)" onmousedown="mDown(this)" class="divColor">
+          MouseUpDown
+        </div>
+      </div>
+      <div class="col-sm-3">
+        Enter your name:
+        <input type="text" id="fname" maxlength="30" onchange="myOnChangeFunction()" onFocus="myOnFocusFunction(this)">
+        <p>When you leave te input field, a function is triggered which transforms the input text to upper case.</p>
+        <span id="fSpan"></span>
+      </div>
+      <div class="col-sm-3">
+        On Key Up:
+        <input type="text" id="keyUp" onkeyup="OnKeyUpFunction();" maxlength="30">
+        <span id="spanKeyUp"></span>
+      </div>
+      <div class="col-sm-3">
+        On Key Down:
+        <input type="text" id="keyDown" onkeydown="OnKeyDownFunction();">
+        <span id="spanKeyDown"></span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        On Key Up and Down:
+        <input type="text" id="keyUpDown" onkeydown="OnKDownFunction();" onkeyup="onKUpFunction();" onkeypress="OnKeyPressFunction();" maxLength="30">
+        <span id="spanKeyUpDown"></span>
+      </div>
+        <div class="col-sm-3">
+          Search icon on a button :
+          <button type="button" class="btn btn-default">
+            <span class="glyphicon glyphicon-search"></span> Search
+          </button>
+        </div>
+        <div class="col-sm-3">
+          <p onclick="ChangeColor(this,'yellow');">Click to change text color to yellow</p>
+        </div>
+        <div class="col-sm-3">
+          <p onmouseover="ChangeColor(this,'grey');" onmouseout="ChangeColor(this,'black');">Mouse over to see text color as grey.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <h2>Clickable Dropdown</h2>
+          <div id="dropdown">
+            <button id="myBtn" class="dropbtn" onclick="ClickableDropdown();">Dropdown</button>
+            <div id="myDropdown" class="dropdown-content">
+              <a href="#Home">Home</a>
+              <a href="#About">About</a>
+              <a href="#Contact">Contact</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          Progress Bar :
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="70">
+              <span class="sr-only">70% complete</span>
+            </div>
+          </div>
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="70">
+              <span>70% complete</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <ul class="pagination pagination-lg">
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-3 panel panel-default">
+          <div class="panel-heading">Pager</div>
+          <div class="panel-body">
+          <ul class="pager">
+            <li class="previous"><a href="#">Previous</a></li>
+            <li class="next"><a href="#">Next</a></li>
+          </ul>
+        </div>
+        </div>
+      </div>
+    </div>
 </body>
 
 </html>

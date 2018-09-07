@@ -23,6 +23,17 @@ function myMessage(){
   alert("This message was triggered from the onload event");
 }
 
+function GetDay(){
+  var d = new Date();
+  var DayName = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+  document.getElementById('IdDate').innerHTML = DayName[d.getDay()];
+}
+
+function GetYear(){
+  var d = new Date();
+  document.getElementById('IdDate').innerHTML = d.getFullYear();
+}
+
 function myOnChangeFunction(){
   var x = document.getElementById("fname");
   x.value = x.value.toUpperCase();
